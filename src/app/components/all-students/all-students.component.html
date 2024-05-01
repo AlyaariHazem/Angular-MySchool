@@ -1,0 +1,27 @@
+<table class="table table-students table-bordered " dir="rtl">
+    <tr>
+      <th>رقم القيد</th>
+        <th>أكشن</th>
+      <th>اسم الطالب</th>
+      <th>رقم الهاتف</th>
+      <th>العمر</th>
+      <th>الدرجات</th>
+      <th>الإيميل</th>
+      <th>إجمالي المدفوع</th>
+      <th>الباقي</th>
+    </tr>
+    @for (item of StudentsInfo; track $index) {
+      <tr>
+        <td><a routerLink="edit">📝</a>👁️‍🗨️🗑️</td>
+        <td>{{item.id}}</td>
+        <td>{{item.firstName + item.lastName}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.grade}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.allPay}}</td>
+        <td>{{item.still}}</td>
+      </tr>
+    }
+  </table>
+  

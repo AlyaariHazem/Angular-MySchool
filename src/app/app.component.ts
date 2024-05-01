@@ -1,13 +1,77 @@
+
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { HeaderComponent } from './components/header/header.component';
+import { ComponentComponent } from "./components/component/component.component";
+import { ReportsComponent } from "./components/reports/reports.component";
+import { AllStudentsComponent } from './components/all-students/all-students.component';
+import { Students } from './students.modul';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  imports: [RouterOutlet, SidebarComponent, HeaderComponent, ComponentComponent, ReportsComponent,
+    AllStudentsComponent
+  ]
 })
 export class AppComponent {
   title = 'Myschool';
+
+
+
+
+
+
+
+  
+  // allstudents: boolean = false;
+  // funShowStudents(show: boolean) {
+  //   this.allstudents = show;
+  // }
+
+
+
+  // StudentsInfo: Students[] = [
+  //   {
+  //     id: 1,
+  //     firstName: "حازم",
+  //     lastName: " عبدالله صلاح اليعري",
+  //     email: "Hazemalyaari@gmail.com",
+  //     age: 23,
+  //     phone: 7739840394,
+  //     grade: 100,
+  //     pay: 100,
+  //     allPay: 100,
+  //     still: 100
+  //   },
+  //   {
+  //     id: 2,
+  //     firstName: "فاهم",
+  //     lastName: " عبدالله صلاح اليعري",
+  //     email: "fahem@gmail.com",
+  //     age: 22,
+  //     phone: 23349837,
+  //     grade: 112,
+  //     pay: 100,
+  //     allPay: 100,
+  //     still: 100
+  //   },
+  //   {
+  //     id: 3,
+  //     firstName: "علي",
+  //     lastName: " عبدالله صلاح اليعري",
+  //     email: "ِali@gmail.com",
+  //     age: 6,
+  //     phone: 6349387492,
+  //     grade: 103,
+  //     pay: 100,
+  //     allPay: 100,
+  //     still: 100
+  //   }
+  // ];
+ 
+
 }

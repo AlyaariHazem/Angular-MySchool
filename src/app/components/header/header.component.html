@@ -1,0 +1,59 @@
+<p class="aboveHeader"></p>
+<nav class="navbar header navbar-expand-lg fixed-top navbar-dark" style="background-color: #597cd6;" aria-label="Main navigation" dir="ltr">
+    <div class="container-fluid" #offcanvasCollapse>
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler  p-0 border-0" type="button" style="background-color: #839bd6"   id="navbarSideCollapse" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"  (click)="appear()"> </span>
+      </button>
+  
+      <div class="navbar-collapse offcanvas-collapse" [ngClass]="{'open': Appear}" (click)="disappear()" id="navbarsExampleDefault">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" dir="rtl" [style]="'flex: inherit;'">
+          <li class="nav-item">
+            <a class="nav-link" href="#" dir="rtl" style="margin-right: -34px;">الرئيسية</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" >الصفوف الدراسية</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle "   data-bs-toggle="dropdown" aria-expanded="false">الطلاب</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"  routerLink="Students" routerLinkActive="students">كل الطلاب</a></li>
+              <li><a class="dropdown-item" href="#">الطلاب المستجدين</a></li>
+              <li><a class="dropdown-item" href="#">ترقية الطلاب</a></li>
+            </ul>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" href="#" dir="rtl">العقود</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">مدفوعات الطلاب  </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="reports">التقارير</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">المستخدمين</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">إعدادات النظام</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">السنوات الدراسية </a></li>
+              <li><a class="dropdown-item" href="#">معلومات المدرسة</a></li>
+              <li><a class="dropdown-item" href="#">المراحل والفصول</a></li>
+              <li><a class="dropdown-item" href="#">رسوم الصفوف</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>

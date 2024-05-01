@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  .table-students{
+    margin-top: 1rem;
+    z-index: 0;
+    width: 88%;
+    margin-left:6%;
+    margin-right:6%;
+    position: absolute;
+    top: 8rem;
+  }
