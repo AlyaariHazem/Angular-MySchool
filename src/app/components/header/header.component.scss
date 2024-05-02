@@ -74,4 +74,50 @@ body {
     flex: auto;
 }
 
+//photo the user
+.photo {
+  position: fixed;
+  left: 2px;
+  top: 2px;
+  width: 4rem;
+  background-color:rgb(131, 155, 214);
+  margin-top: 0.5rem;
+  /* Add the following styles */
+  color: transparent;
+  overflow: hidden;
+  cursor: pointer;
+}
 
+.photo::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.photo::before {
+  content: "اختر صورة";
+  color: rgb(19, 19, 19);
+  display: inline-block;
+  background: rgb(131, 155, 214);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+p.schoolName{
+  // font-size: 2rem;
+  font-weight: bold;
+  // font-style: italic;
+  font-family: 'Courier New', Courier, monospace;
+  position: fixed;
+  top:12px;
+  margin-left: 50%;
+}
+//when you vist the link it make it white
+.white{
+  color:white;
+}

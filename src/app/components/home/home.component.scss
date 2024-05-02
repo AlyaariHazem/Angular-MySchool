@@ -1,0 +1,154 @@
+.message{
+    color:red;
+    margin-top: 9rem;
+    border:1px solid green($color: #e4cbcb);
+    background-color: #fff;
+    text-align: center;
+    width: 88%;
+    margin-left: 6%;
+    padding:4px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: bold;
+}
+.total .class{
+    color:black;
+    margin-top: 1rem;
+    border:1px solid green($color: #e4cbcb);
+    background-color: #fff;
+    text-align: center;
+    width: 27%;
+    position: fixed;
+    padding: 20px 2px;
+    right: 2px;
+    
+    margin-right: 6%;
+}
+.total .class i{
+    position: relative;
+    top: 20px;
+}
+.total .class .icon{
+    position: relative;
+    right: -1rem;
+    width: 44px;
+    color: green;
+}
+
+.total .students{
+    color:black;
+    margin-top: 1rem;
+    border:1px solid green($color: #e4cbcb);
+    background-color: #fff;
+    text-align: center;
+    width: 27%;
+    position: fixed;
+    padding: 20px 2px;
+    right: 31%;
+    margin-right: 6%;
+}
+.total .students i{
+    position: relative;
+    top: 20px;
+}
+.total .students .icon{
+    position: relative;
+    right: -1rem;
+    width: 44px;
+    color: blue;
+}
+
+.total .writing{
+    color:black;
+    margin-top: 1rem;
+    border:1px solid green($color: #e4cbcb);
+    background-color: #fff;
+    text-align: center;
+    width: 27%;
+    position: fixed;
+    padding: 20px 2px;
+    right: 61%;
+    margin-right: 6%;
+}
+.total .writing i{
+    position: relative;
+    top: 20px;
+}
+.total .writing .icon{
+    position: relative;
+    right: -1rem;
+    width: 44px;
+    color: rgb(64, 226, 255);
+}
+
+// all money1 
+.total .money1{
+    color:black;
+    margin-top: 9rem;
+    border:1px solid green($color: #e4cbcb);
+    background-color: #fff;
+    text-align: center;
+    width: 27%;
+    position: fixed;
+    padding: 20px 2px;
+    right: 2px;
+    
+    margin-right: 6%;
+}
+.total .money1 i{
+    position: relative;
+    top: 20px;
+}
+.total .money1 .icon{
+    position: relative;
+    right: -1rem;
+    width: 44px;
+    color: rgb(204, 67, 67);
+}
+// money2
+.total .money2{
+    color:black;
+    margin-top: 9rem;
+    border:1px solid green($color: #e4cbcb);
+    background-color: #fff;
+    text-align: center;
+    width: 27%;
+    position: fixed;
+    padding: 20px 2px;
+    right: 31%;
+    margin-right: 6%;
+}
+.total .money2 i{
+    position: relative;
+    top: 20px;
+}
+.total .money2 .icon{
+    position: relative;
+    right: -1rem;
+    width: 44px;
+    color: rgb(64, 226, 255);
+}
+//money3
+.total .money3{
+    color:black;
+    margin-top: 9rem;
+    border:1px solid green($color: #e4cbcb);
+    background-color: #fff;
+    text-align: center;
+    width: 27%;
+    position: fixed;
+    padding: 20px 2px;
+    right: 61%;
+    margin-right: 6%;
+}
+.total .money3 i{
+    position: relative;
+    top: 20px;
+}
+.total .money3 .icon{
+    position: relative;
+    right: -1rem;
+    width: 44px;
+    color: rgb(255, 6, 14);
+}
+

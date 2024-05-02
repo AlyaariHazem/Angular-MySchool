@@ -10,3 +10,11 @@ export interface Students {
     still: number;
     isEdit:boolean;
   }
+  export interface payment{
+    NameStudent: string;
+    Name: string;
+    pushName:string;
+    money: number;
+    wayPush: string;
+    date: string;
+  }

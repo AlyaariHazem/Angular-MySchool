@@ -22,7 +22,11 @@ export class AllStudentsComponent {
       this.editingField = null;
     }
   }
-
+  onInputBlur(fieldName: string) {
+    if (this.editingField === fieldName) {
+      this.editingField = '';
+    }
+  }
   StudentsInfo: Students[] = [
     {
       id: 1,
