@@ -1,24 +1,28 @@
 import { CommonModule, NgClass } from '@angular/common';
-import { Component, Output,EventEmitter} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule,CommonModule,NgClass],
+  imports: [RouterModule, CommonModule, NgClass],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
 
 
-  Appear:boolean=false;
-  appear(){
-  this.Appear=true;
+  Appear: boolean = false;
+  appear() {
+    this.Appear = true;
+    this.cancel = false;
   }
- disappear(){
-  this.Appear=false;
- }
+  cancel: boolean = true;
+  disappear() {
+    this.cancel = true;
+    this.Appear = false;
+  }
+
 
 
   // @Output() showStudents = new EventEmitter<string>();

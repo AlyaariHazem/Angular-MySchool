@@ -6,7 +6,8 @@
         <span class="navbar-toggler-icon"  (click)="appear()"> </span>
       </button>
   
-      <div class="navbar-collapse offcanvas-collapse" [ngClass]="{'open': Appear}" (click)="disappear()" id="navbarsExampleDefault">
+      <div class="navbar-collapse offcanvas-collapse" [ngClass]="{'open': Appear}"  id="navbarsExampleDefault">
+        <div  [ngClass]="{'cancel':appear}" (click)="disappear()"><span>X</span></div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" dir="rtl" [style]="'flex: inherit;'">
           <li class="nav-item">
             <a class="nav-link" href="#" dir="rtl" style="margin-right: -34px;">الرئيسية</a>

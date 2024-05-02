@@ -1,7 +1,6 @@
 export interface Students {
     id: number;
-    firstName: string;
-    lastName: string;
+    Name: string;
     email: string;
     phone:number;
     age: number;
@@ -9,4 +8,5 @@ export interface Students {
     pay: number;
     allPay: number;
     still: number;
+    isEdit:boolean;
   }

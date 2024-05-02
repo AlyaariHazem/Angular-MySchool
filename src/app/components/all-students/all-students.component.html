@@ -1,27 +1,69 @@
-<table class="table table-students table-bordered " dir="rtl">
-    <tr>
-      <th>رقم القيد</th>
-        <th>أكشن</th>
-      <th>اسم الطالب</th>
-      <th>رقم الهاتف</th>
-      <th>العمر</th>
-      <th>الدرجات</th>
-      <th>الإيميل</th>
-      <th>إجمالي المدفوع</th>
-      <th>الباقي</th>
-    </tr>
-    @for (item of StudentsInfo; track $index) {
-      <tr>
-        <td><a routerLink="edit">📝</a>👁️‍🗨️🗑️</td>
-        <td>{{item.id}}</td>
-        <td>{{item.firstName + item.lastName}}</td>
-        <td>{{item.phone}}</td>
-        <td>{{item.age}}</td>
-        <td>{{item.grade}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.allPay}}</td>
-        <td>{{item.still}}</td>
-      </tr>
-    }
-  </table>
-  
+<table class="table table-students table-bordered" dir="rtl">
+  <tr>
+    <th>أكشن</th>
+    <th>رقم القيد</th>
+    <th>اسم الطالب</th>
+    <th>رقم الهاتف</th>
+    <th>العمر</th>
+    <th>الدرجات</th>
+    <th>الإيميل</th>
+    <th>إجمالي المدفوع</th>
+    <th>الباقي</th>
+  </tr>
+  <tr *ngFor="let student of StudentsInfo; let i = index" [ngClass]="{'bg-light': i % 2 === 0}">
+    <td>
+      <button (click)="editStudent(student)">
+        <span>📝</span>
+      </button>
+      👁️‍🗨️🗑️
+    </td>
+    <td *ngIf="editingField === 'id_' + student.id; else readOnlyId">
+      <input type="text" [(ngModel)]="student.id" name="id" class="form-control input-field" />
+    </td>
+    <ng-template #readOnlyId>
+      <td (dblclick)="editStudent('id_' + student.id)" class="read-only-field">{{ student.id }}</td>
+    </ng-template>
+    <td *ngIf="editingField === 'name_' + student.id; else readOnlyName">
+      <input type="text" [(ngModel)]="student.Name" name="name" class="form-control input-field" />
+    </td>
+    <ng-template #readOnlyName>
+      <td (dblclick)="editStudent('name_' + student.id)" class="read-only-field">{{ student.Name }}</td>
+    </ng-template>
+    <td *ngIf="editingField === 'phone_' + student.id; else readOnlyPhone">
+      <input type="text" [(ngModel)]="student.phone" name="phone" class="form-control input-field" />
+    </td>
+    <ng-template #readOnlyPhone>
+      <td (dblclick)="editStudent('phone_' + student.id)" class="read-only-field">{{ student.phone }}</td>
+    </ng-template>
+    <td *ngIf="editingField === 'age_' + student.id; else readOnlyAge">
+      <input type="number" [(ngModel)]="student.age" name="age" class="form-control input-field" />
+    </td>
+    <ng-template #readOnlyAge>
+      <td (dblclick)="editStudent('age_' + student.id)" class="read-only-field">{{ student.age }}</td>
+    </ng-template>
+    <td *ngIf="editingField === 'grade_' + student.id; else readOnlyGrade">
+      <input type="number" [(ngModel)]="student.grade" name="grade" class="form-control input-field" />
+    </td>
+    <ng-template #readOnlyGrade>
+      <td (dblclick)="editStudent('grade_' + student.id)" class="read-only-field">{{ student.grade }}</td>
+    </ng-template>
+    <td *ngIf="editingField === 'email_' + student.id; else readOnlyEmail">
+      <input type="email" [(ngModel)]="student.email" name="email" class="form-control input-field" />
+    </td>
+    <ng-template #readOnlyEmail>
+      <td (dblclick)="editStudent('email_' + student.id)" class="read-only-field">{{ student.email }}</td>
+    </ng-template>
+    <td *ngIf="editingField === 'allPay_' + student.id; else readOnlyAllPay">
+      <input type="number" [(ngModel)]="student.allPay" name="allPay" class="form-control input-field" />
+    </td>
+    <ng-template #readOnlyAllPay>
+      <td (dblclick)="editStudent('allPay_' + student.id)" class="read-only-field">{{ student.allPay }}</td>
+    </ng-template>
+    <td *ngIf="editingField === 'still_' + student.id; else readOnlyStill">
+      <input type="number" [(ngModel)]="student.still" name="still" class="form-control input-field" />
+    </td>
+    <ng-template #readOnlyStill>
+      <td (dblclick)="editStudent('still_' + student.id)" class="read-only-field">{{ student.still }}</td>
+    </ng-template>
+  </tr>
+</table>
