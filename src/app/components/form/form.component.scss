@@ -1,0 +1,21 @@
+.form-inline{
+    z-index: 111111;
+    position: relative;
+    left: 22px;
+}
+.form{
+    position: absolute;
+ 
+ z-index: inherit;
+    top: 10rem;
+    left: 40%;    
+}
+.buttonSend{
+    margin-top: 11px;
+    width:100%;
+}
+@media (max-width:500px){
+    .form{
+        left: 20%;    
+    }   
+}

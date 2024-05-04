@@ -9,7 +9,8 @@ body {
   width: 100%;
   height: 3rem;
   position: fixed;
-  background-color: #ded9ed;
+  top: 0;
+  background-color: #f0f4f7;
 }
 .header{
  margin-top: 3rem;
@@ -77,47 +78,66 @@ body {
 //photo the user
 .photo {
   position: fixed;
-  left: 2px;
-  top: 2px;
+  left: 16%;
+  top: 0;
   width: 4rem;
-  background-color:rgb(131, 155, 214);
-  margin-top: 0.5rem;
-  /* Add the following styles */
   color: transparent;
   overflow: hidden;
+  padding: 11px;
   cursor: pointer;
+  z-index: 1112;
 }
 
 .photo::-webkit-file-upload-button {
   visibility: hidden;
 }
 
-.photo::before {
-  content: "اختر صورة";
-  color: rgb(19, 19, 19);
-  display: inline-block;
-  background: rgb(131, 155, 214);
-  border: 1px solid #999;
-  border-radius: 3px;
-  padding: 5px 8px;
-  outline: none;
-  white-space: nowrap;
-  cursor: pointer;
-  text-shadow: 1px 1px #fff;
-  font-weight: 700;
-  font-size: 10pt;
-}
 
 p.schoolName{
   // font-size: 2rem;
   font-weight: bold;
-  // font-style: italic;
-  font-family: 'Courier New', Courier, monospace;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: fixed;
-  top:12px;
-  margin-left: 50%;
+  top:17px;
+  color:rgb(161, 161, 255);
+  right:5.3rem;
+}
+.logo img{
+  position: fixed;
+  top:2px;
+  right:2px;
+  width: 77px;
+  height: auto;
 }
 //when you vist the link it make it white
 .white{
   color:white;
+}
+.photo1{
+  color:rgb(22, 212, 255);
+  position: fixed;
+  top: -2px;
+  left: 16%;
+  z-index: 11;
+}
+.photo1 img{
+  width:50px ;
+  border: 1px solid rgb(247, 195, 247);
+  border-radius: 20px;
+}
+.photo1 p{
+  top: 33px;
+  left: 12%;
+  position: fixed;
+  z-index: 1111;
+  color: black;
+}
+.exit{
+  position: fixed;
+  top: 16px;
+  font-weight: bold;
+  color:red;
+  cursor: pointer;
+  left: 1%;
+  z-index: 11;
 }

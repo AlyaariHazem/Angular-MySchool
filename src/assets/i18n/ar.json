@@ -1,0 +1,9 @@
+{
+    "validation":{
+        "requiredMessage":"هذا الحقل مطلوب",
+        "requiredUserName":"اسم المستخدم مطلوب",
+        "lessLetter":"يجب أن يكون الاسم أكبر من 5 حروف",
+        "requiredEmail":"يجب أن تدخل إيميل"
+    }
+
+}

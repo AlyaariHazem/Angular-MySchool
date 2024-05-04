@@ -1,12 +1,15 @@
 
-import { Component } from '@angular/core';
+import { Component,inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { HeaderComponent } from './components/header/header.component';
 import { ComponentComponent } from "./components/component/component.component";
 import { ReportsComponent } from "./components/reports/reports.component";
-import { AllStudentsComponent } from './components/all-students/all-students.component';
-import { Students } from './students.modul';
+import { StudentsComponent } from './components/students/students.component';
+import { AllStudentsComponent } from './components/students/all-students/all-students.component';
+import { TranslationService } from './services/translation.service';
 
 @Component({
   selector: 'app-root',
@@ -14,17 +17,16 @@ import { Students } from './students.modul';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [RouterOutlet, SidebarComponent, HeaderComponent, ComponentComponent, ReportsComponent,
-    AllStudentsComponent
+    StudentsComponent,AllStudentsComponent
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Myschool';
+  translationService=inject(TranslationService);
 
-
-
-
-
-
+  ngOnInit(): void {
+    this.translationService.setDefaultLang('ar');
+  }
 
   
   // allstudents: boolean = false;

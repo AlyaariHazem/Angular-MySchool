@@ -1,0 +1,44 @@
+<div class="form">
+
+    <form class="form-inline" action="" dir="rtl" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+        <p dir="ltr">{{email}} </p>
+        <mat-form-field appearance="outline">
+            <mat-label>إدخل اسم المستخدم</mat-label>
+            <input matInput placeholder="اسم المستخدم" #Email="ngModel" ngModel name="email" required minlength="5"
+                maxlength="22" email (ngModelChange)="onEmailChanged($event)" [ngModelOptions]="{updateOn:'blur'}">
+
+            @if (Email.errors?.['required']) {
+            <mat-error>{{'validation.requiredUserName' | translate}}</mat-error>
+            }
+            @else if (Email.errors?.['minlength']) {
+            <mat-error>{{'validation.lessLetter' | translate}}</mat-error>
+            }
+            @else if (Email.errors?.['email']) {
+            <mat-error>{{'validation.requiredEmail'| translate }}</mat-error>
+            }
+        </mat-form-field>
+
+        <p>{{password}}</p>
+
+        <mat-form-field appearance="outline">
+            <mat-label>كلمة السر</mat-label>
+            <input matInput placeholder="كلمة السر" ngModel name="password" required
+                (ngModelChange)="onPasswordChanged($event)" minlength="6" maxlength="22" #pass="ngModel"
+                [ngModelOptions]="{updateOn:'blur'}">
+
+
+            @if (pass.errors?.['required']) {
+            <mat-error>{{'validation.requiredMessage' | translate}}</mat-error>
+            }
+            @else if (pass.errors?.['minlength']) {
+            <mat-error>يجب أن تكون كلمة السر اكبر من 6</mat-error>
+            }
+        </mat-form-field>
+        <br>
+        <button type="submit" class="btn btn-primary mb-2 buttonSend" type="submit"
+            [disabled]="!loginForm.valid">إرسال</button>
+        <a href="#">هل نسيت كلمة السر؟</a>
+    </form>
+
+</div>

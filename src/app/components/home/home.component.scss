@@ -1,44 +1,56 @@
-.message{
-    color:red;
+.message {
+    color: red;
     margin-top: 9rem;
-    border:1px solid green($color: #e4cbcb);
+    border: 1px solid green($color: #e4cbcb);
     background-color: #fff;
     text-align: center;
     width: 88%;
     margin-left: 6%;
-    padding:4px 0;
+    padding: 4px 0;
+    top: 2rem;
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
     font-weight: bold;
+    position: fixed;
 }
-.total .class{
-    color:black;
+.dashboard{
+    position: fixed;
+    top: 15rem;
+}
+.total .class {
+    color: black;
     margin-top: 1rem;
-    border:1px solid green($color: #e4cbcb);
+    border: 1px solid green($color: #e4cbcb);
     background-color: #fff;
     text-align: center;
     width: 27%;
     position: fixed;
     padding: 20px 2px;
     right: 2px;
-    
+    transition: transform 1s ease;
     margin-right: 6%;
 }
-.total .class i{
+.total .class:hover {
+    transform: scale(1.08);
+    border: 2px solid rgb(184, 210, 247);
+    border-radius: 3px;
+  }
+.total .class i {
     position: relative;
     top: 20px;
 }
-.total .class .icon{
+
+.total .class .icon {
     position: relative;
     right: -1rem;
     width: 44px;
     color: green;
 }
 
-.total .students{
-    color:black;
+.total .students {
+    color: black;
     margin-top: 1rem;
-    border:1px solid green($color: #e4cbcb);
+    border: 1px solid green($color: #e4cbcb);
     background-color: #fff;
     text-align: center;
     width: 27%;
@@ -46,22 +58,30 @@
     padding: 20px 2px;
     right: 31%;
     margin-right: 6%;
+    transition: transform 1s ease;
 }
-.total .students i{
+.total .students:hover {
+    transform: scale(1.08);
+    border: 2px solid rgb(184, 210, 247);
+    border-radius: 3px;
+  }
+
+.total .students i {
     position: relative;
     top: 20px;
 }
-.total .students .icon{
+
+.total .students .icon {
     position: relative;
     right: -1rem;
     width: 44px;
     color: blue;
 }
 
-.total .writing{
-    color:black;
+.total .writing {
+    color: black;
     margin-top: 1rem;
-    border:1px solid green($color: #e4cbcb);
+    border: 1px solid green($color: #e4cbcb);
     background-color: #fff;
     text-align: center;
     width: 27%;
@@ -69,12 +89,20 @@
     padding: 20px 2px;
     right: 61%;
     margin-right: 6%;
+    transition: transform 1s ease;
 }
-.total .writing i{
+.total .writing:hover {
+    transform: scale(1.08);
+    border: 2px solid rgb(184, 210, 247);
+    border-radius: 3px;
+  }
+
+.total .writing i {
     position: relative;
     top: 20px;
 }
-.total .writing .icon{
+
+.total .writing .icon {
     position: relative;
     right: -1rem;
     width: 44px;
@@ -82,34 +110,37 @@
 }
 
 // all money1 
-.total .money1{
-    color:black;
+.total .money1 {
+    color: black;
     margin-top: 9rem;
-    border:1px solid green($color: #e4cbcb);
+    border: 1px solid green($color: #e4cbcb);
     background-color: #fff;
     text-align: center;
     width: 27%;
     position: fixed;
     padding: 20px 2px;
     right: 2px;
-    
+    transition: transform 1s ease;
     margin-right: 6%;
 }
-.total .money1 i{
+
+.total .money1 i {
     position: relative;
     top: 20px;
 }
-.total .money1 .icon{
+
+.total .money1 .icon {
     position: relative;
     right: -1rem;
     width: 44px;
     color: rgb(204, 67, 67);
 }
+
 // money2
-.total .money2{
-    color:black;
+.total .money2 {
+    color: black;
     margin-top: 9rem;
-    border:1px solid green($color: #e4cbcb);
+    border: 1px solid green($color: #e4cbcb);
     background-color: #fff;
     text-align: center;
     width: 27%;
@@ -117,22 +148,26 @@
     padding: 20px 2px;
     right: 31%;
     margin-right: 6%;
+    transition: transform 1s ease;
 }
-.total .money2 i{
+
+.total .money2 i {
     position: relative;
     top: 20px;
 }
-.total .money2 .icon{
+
+.total .money2 .icon {
     position: relative;
     right: -1rem;
     width: 44px;
     color: rgb(64, 226, 255);
 }
+
 //money3
-.total .money3{
-    color:black;
+.total .money3 {
+    color: black;
     margin-top: 9rem;
-    border:1px solid green($color: #e4cbcb);
+    border: 1px solid green($color: #e4cbcb);
     background-color: #fff;
     text-align: center;
     width: 27%;
@@ -140,15 +175,20 @@
     padding: 20px 2px;
     right: 61%;
     margin-right: 6%;
+    transition: transform 1s ease;
 }
-.total .money3 i{
-    position: relative;
-    top: 20px;
-}
-.total .money3 .icon{
-    position: relative;
-    right: -1rem;
-    width: 44px;
-    color: rgb(255, 6, 14);
-}
-
+.total .money3:hover {
+    transform: scale(1.08);
+    border: 2px solid rgb(184, 210, 247);
+    border-radius: 3px;
+  }
+  .total .money2:hover {
+    transform: scale(1.08);
+    border: 2px solid rgb(184, 210, 247);
+    border-radius: 3px;
+  }
+  .total .money1:hover {
+    transform: scale(1.08);
+    border: 2px solid rgb(184, 210, 247);
+    border-radius: 3px;
+  }

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Students } from '../../students.modul';
+import { Students } from '../../../students.modul';
 import { FormsModule } from '@angular/forms';
 
 @Component({

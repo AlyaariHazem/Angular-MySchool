@@ -1,0 +1,9 @@
+{
+    "validation":{
+        "requiredMessage":"This field is required",
+        "requiredUserName":"UserName is required",
+        "lessLetter":"charectar must be more then 5",
+        "requiredEmail":"must Enter Email"
+    }
+
+}

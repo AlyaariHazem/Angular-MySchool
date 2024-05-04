@@ -1,11 +1,12 @@
-import { CommonModule, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, Output, EventEmitter } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../sharedComponents/shared.module';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule, NgClass],
+  imports: [RouterModule,SharedModule, NgClass],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
