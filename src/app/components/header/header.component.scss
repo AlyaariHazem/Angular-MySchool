@@ -11,6 +11,7 @@ body {
   position: fixed;
   top: 0;
   background-color: #f0f4f7;
+  z-index: 1;
 }
 .header{
  margin-top: 3rem;
@@ -108,6 +109,7 @@ p.schoolName{
   right:2px;
   width: 77px;
   height: auto;
+  z-index: 2;
 }
 //when you vist the link it make it white
 .white{

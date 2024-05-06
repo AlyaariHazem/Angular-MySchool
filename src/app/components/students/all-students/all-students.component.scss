@@ -1,3 +1,36 @@
+.iconSave {
+  position: relative;
+  top: 33%;
+  margin-top: 7rem;
+  z-index: 111111;
+  left: 3%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconSave:before {
+  content: "Save";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.iconSave:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
