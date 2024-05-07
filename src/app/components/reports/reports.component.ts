@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { payment, Students } from '../../students.modul';
+import { payment } from '../../students.modul';
 
 @Component({
   selector: 'app-reports',

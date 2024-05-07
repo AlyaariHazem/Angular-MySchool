@@ -14,7 +14,16 @@
     align-items: center;
     justify-content: center;
   }
-  
+  .iconSave2 {
+    position: relative;
+    top: 25px;
+    z-index: 1111111;
+    right: 96%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
   .iconSave:before {
     content: "Save";
     position: absolute;
@@ -299,4 +308,7 @@ input:focus,select:focus {
 
 //*******************************************parant
 
-
+.parentInfo{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}

@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../sharedComponents/shared.module';
 
