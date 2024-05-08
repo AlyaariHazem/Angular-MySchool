@@ -12,23 +12,14 @@ import { SharedModule } from '../sharedComponents/shared.module';
 })
 export class HeaderComponent {
 
-
-  Appear: boolean = false;
-  appear() {
-    this.Appear = true;
-    this.cancel = false;
-  }
-  cancel: boolean = true;
-  disappear() {
-    this.cancel = true;
-    this.Appear = false;
+   
+  toggle:boolean=false;
+  open(){
+  this.toggle=!this.toggle;
   }
 
+  hidden() {
+    this.toggle=false;
+  }  
 
-
-  // @Output() showStudents = new EventEmitter<string>();
-
-  // showstudents() {
-  //   this.showStudents.emit();
-  // }
 }

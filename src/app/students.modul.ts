@@ -1,14 +1,14 @@
 export interface Students {
     id: number;
-    Name: string;
+    name: string;
+    username: number;
     email: string;
     phone:number;
-    age: number;
-    grade: number;
-    pay: number;
-    allPay: number;
-    still: number;
-    isEdit:boolean;
+    address:{"city": number;};
+    // pay: number;
+    // allPay: number;
+    // still: number;
+    // isEdit:boolean;
   }
   export interface payment{
     NameStudent: string;

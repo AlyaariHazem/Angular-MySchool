@@ -18,6 +18,9 @@ import { TranslationService } from './services/translation.service';
   imports: [RouterOutlet, SidebarComponent, HeaderComponent, ComponentComponent, ReportsComponent,
     StudentsComponent,AllStudentsComponent
   ]
+  , host: {
+    '[attr.ngSkipHydration]': 'true'
+  }
 })
 export class AppComponent implements OnInit {
   title = 'Myschool';

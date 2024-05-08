@@ -17,7 +17,7 @@
       <th>إجمالي المدفوع</th>
       <th>الباقي</th>
     </tr>
-    @for (student of StudentsInfo; track $index) {
+    @for (student of students; track  $index) {
     <tr [ngClass]="{'bg-light': $index % 2 === 0}">
       <td>
         <span (click)="editStudent(student)">
@@ -46,14 +46,14 @@
         <input type="text" [(ngModel)]="student.id" name="id" class="form-control input-field" (blur)="onInputBlur('id_' + student.id)"/>
       </td>
       }@else {
-      <td (dblclick)="editStudent('id_' + student.id)" class="read-only-field">{{ student.id }}</td>
+      <td (dblclick)="editStudent('id_' + student.id)" class="read-only-field">{{ ++$index }}</td>
       }
       @if (editingField === 'name_' + student.id) {
       <td>
-        <input type="text" [(ngModel)]="student.Name" name="name" class="form-control input-field" (blur)="onInputBlur('name_'+student.id)" />
+        <input type="text" [(ngModel)]="student.name" name="name" class="form-control input-field" (blur)="onInputBlur('name_'+student.id)" />
       </td>
       }@else {
-      <td (dblclick)="editStudent('name_' + student.id)" class="read-only-field">{{ student.Name }}</td>
+      <td (dblclick)="editStudent('name_' + student.id)" class="read-only-field">{{ student.name}}</td>
       }
       @if (editingField === 'phone_' + student.id) {
       <td>
@@ -67,7 +67,7 @@
         <input type="number" [(ngModel)]="student.age" name="age" class="form-control input-field" (blur)="onInputBlur('age_'+student.id)" />
       </td>
       }@else {
-      <td (dblclick)="editStudent('age_' + student.id)" class="read-only-field">{{ student.age }}</td>
+      <td (dblclick)="editStudent('age_' + student.id)" class="read-only-field">{{ 22 }}</td>
   
       }
       @if (editingField === 'grade_' + student.id) {
@@ -75,7 +75,7 @@
         <input type="number" [(ngModel)]="student.grade" name="grade" class="form-control input-field" (blur)="onInputBlur('grade_'+student.id)" />
       </td>
       }@else {
-      <td (dblclick)="editStudent('grade_' + student.id)" class="read-only-field">{{ student.grade }}</td>
+      <td (dblclick)="editStudent('grade_' + student.id)" class="read-only-field">{{ '100%' }}</td>
       }
       @if (editingField === 'email_' + student.id) {
       <td>

@@ -1,8 +1,9 @@
-<form [formGroup]="form">
+<form [formGroup]="form" >
     <div class="info" dir="rtl">
-        <div class="iconSave">
-            <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" class="bi bi-floppy-fill"
+        <div class="iconSave" (click)="sendNewStudent()">
+            <svg xmlns="http://www.w3.org/2000/svg"   width="16" height="16" fill="currentColor" class="bi bi-floppy-fill"
                 viewBox="0 0 16 16">
+                
                 <path
                     d="M0 1.5A1.5 1.5 0 0 1 1.5 0H3v5.5A1.5 1.5 0 0 0 4.5 7h7A1.5 1.5 0 0 0 13 5.5V0h.086a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5H14v-5.5A1.5 1.5 0 0 0 12.5 9h-9A1.5 1.5 0 0 0 2 10.5V16h-.5A1.5 1.5 0 0 1 0 14.5z" />
                 <path
@@ -27,6 +28,7 @@
                         @if (form.get('StudentName')?.errors?.['required']) {
                         <div>رقم الهوية مطلوب</div>
                         }
+                        
                     </div>
                     }
 
@@ -36,7 +38,8 @@
                     <div class="lab1" style="top: 4.5rem;color: red;">
                         @if (form.get('PlacePD')?.errors?.['required']) {
                         <div>مكان الميلاد مطلوب</div>
-                        }
+                         
+                    }
                     </div>
                     }
 
@@ -80,7 +83,7 @@
                     }
                 </div>
                 <div class="section4">
-                    <h2 style="margin-right: 22px;">الاسم باللغة الانجليزية</h2>
+                    <h2 style="margin-right: 22px;">الاسم باللغة الانجليزية </h2>
                     <label for="fnameE" class="lab4-1">First</label>
                     <input type="text" id="fnameE" class="input4-1" formControlName="fnameE">
                     <label for="SnameE" class="lab4-2">Second</label>
