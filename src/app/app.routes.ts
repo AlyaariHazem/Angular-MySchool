@@ -30,7 +30,7 @@ export const routes: Routes = [
     { path: 'paying', component: FormComponent },
     { path: 'contract', component: ContractComponent },
     { path: 'text/id', component: UpliftStudentsComponent },
-    { path: '', pathMatch: 'full', redirectTo: '/home' },
+    { path: '', pathMatch: 'full', redirectTo: '/**' },
     { path: '**', component: PageNotFoundComponent },
 
 ];

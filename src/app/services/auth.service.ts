@@ -1,15 +1,16 @@
-// import { Injectable } from '@angular/core';
-// import { Observable } from 'rxjs';
-// import { FirebaseService } from './firebase.service';
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
+import { Injectable, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FirebaseService } from './firebase.service';
+import { signUp } from './firebase-url';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
-// constructor(private firebaseService:FirebaseService){}
-// signUp(): Observable<any>{
-//   return this.firebaseService.
-// }
-// }
+
+@Injectable({
+    providedIn: 'root'
+})
+export class AuthService {
+    firebaseService = inject(FirebaseService);
+
+    signUp(email: string, password: string): Observable<any> {
+        return this.firebaseService.postRequest(signUp, { email, password, 'returnSecureToken': true }, { 'content-type': 'application/json' });
+    }
+}

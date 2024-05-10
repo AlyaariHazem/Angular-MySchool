@@ -9,6 +9,7 @@ import { ReportsComponent } from "./components/reports/reports.component";
 import { StudentsComponent } from './components/students/students.component';
 import { AllStudentsComponent } from './components/students/all-students/all-students.component';
 import { TranslationService } from './services/translation.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ import { TranslationService } from './services/translation.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [RouterOutlet, SidebarComponent, HeaderComponent, ComponentComponent, ReportsComponent,
-    StudentsComponent,AllStudentsComponent
+    StudentsComponent,AllStudentsComponent,HttpClientModule
   ]
   , host: {
     '[attr.ngSkipHydration]': 'true'

@@ -1,28 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { inject, Injectable } from '@angular/core';
+import { map, Observable } from 'rxjs';
+
+import { FirebaseService } from '../firebase.service';
+import { Students } from '../../students.modul';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentsServicesService {
 
-  constructor(public http: HttpClient) { }
+  firebase=inject(FirebaseService);
 
-  getStudents(): Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/users').pipe(
-      map(res => res)
-    );
-  }
-  addStudent(student: any): Observable<any> {
-    return this.http.post('https://jsonplaceholder.typicode.com/users', student).pipe(
-      map(res => res)
-    )
-  }
-  deleteStudent(id:string | number): Observable<any> {
-    return this.http.delete('https://jsonplaceholder.typicode.com/users/'+id).pipe(
-      map(res => res)
-    )
+  getStudents(): Observable<Array<Students>> {
+    return this.firebase.getRequest<Array<Students>>('student').pipe(map(
+      (student)=>Object.values(student)
+    ));
   }
 }

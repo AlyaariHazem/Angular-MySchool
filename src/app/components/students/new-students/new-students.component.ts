@@ -4,7 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../../sharedComponents/shared.module';
-import { StudentsServicesService } from '../../../services/students/students-services.service';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-new-students',
   standalone: true,
@@ -16,34 +16,22 @@ export class NewStudentsComponent implements OnInit {
 
   form:FormGroup;
   name = "info";
-
-  //inject service 
-  studentService = inject(StudentsServicesService);
-
-  students:any[]=[];
+  
   sendNewStudent(): void {
     if (this.form.valid) {
-
-      const newStudent = this.form.value;
-      
-      this.studentService.addStudent(newStudent).subscribe({
-        next: (response) => {
-          this.students.push(response);
-          console.log('New student added:', response);
-        },
-        error: (error) => {
-          console.error('Error adding new student:', error);
-        },
-        complete: () => {
-          console.log('Student addition completed');
-        }
-      });
+      this.register();
     } else {
       console.log('Form is invalid:', this.form);
     }
   }
-
- 
+  
+  private authService=inject(AuthService);
+  register():void{
+    const formValue=this.form.value;
+    this.authService.signUp(formValue.parantEmail,formValue.parantPhone).subscribe(res=>{
+      console.log('Hazem successful to register ',res);
+    })
+  }
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       PlacePD: ['', Validators.required],
@@ -82,8 +70,4 @@ export class NewStudentsComponent implements OnInit {
       this.varaible = value;
     });
   }
-  //assign value from form to varaible 
-  // this.form.get('class')?.valueChanges.subscribe(value=>{
-  // this.varaible=value;
-
 }

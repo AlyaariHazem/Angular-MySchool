@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Students } from '../../../students.modul';
 import { FormsModule } from '@angular/forms';
 import { StudentsServicesService } from '../../../services/students/students-services.service';
@@ -29,19 +29,16 @@ export class AllStudentsComponent {
     }
   }
 
+
   // this will fetch data form the jsonplaceholder  => "users"
-
-  constructor(private getStudentsData: StudentsServicesService) { }
-  students: any[] = [];
-
+  students:Array<Students>=[];
+  getStudentsData=inject(StudentsServicesService);
   ngOnInit(): void {
-    this.getStudents();
 
-  }
-  getStudents() {
-    this.getStudentsData.getStudents().subscribe((students) => {
-      this.students = students;
-    });
+    this.getStudentsData.getStudents().subscribe(res=>{
+      this.students=res;
+      console.log('these are stuents ',this.students);  
+    })
   }
   
 }

@@ -5,10 +5,13 @@ export interface Students {
     email: string;
     phone:number;
     address:{"city": number;};
-    // pay: number;
-    // allPay: number;
-    // still: number;
-    // isEdit:boolean;
+    pay: number;
+    grade:number;
+    allPay: number;
+    age:number;
+    still: number;
+    isEdit:boolean;
+    isActive:number;
   }
   export interface payment{
     NameStudent: string;

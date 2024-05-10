@@ -23,6 +23,7 @@
       {
         "aria-allowed-attr": "off"
       }
-    ]
+    ],
+    "button-type": "off"
   }
 }
