@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 
 // const components=[];
@@ -13,7 +12,6 @@ const modules=[
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule,
     TranslateModule,
     ReactiveFormsModule
 ]
