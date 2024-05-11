@@ -2,12 +2,10 @@
 import { Component,inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { SidebarComponent } from "./components/sidebar/sidebar.component";
-import { HeaderComponent } from './components/header/header.component';
-import { ComponentComponent } from "./components/component/component.component";
-import { ReportsComponent } from "./components/reports/reports.component";
-import { StudentsComponent } from './components/students/students.component';
-import { AllStudentsComponent } from './components/students/all-students/all-students.component';
+// import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { HeaderComponent } from './admin/components/header/header.component';
+import { StudentsComponent } from './admin/components/students/students.component';
+import { AllStudentsComponent } from './admin/components/students/all-students/all-students.component';
 import { TranslationService } from './services/translation.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, SidebarComponent, HeaderComponent, ComponentComponent, ReportsComponent,
+  imports: [RouterOutlet, HeaderComponent, 
     StudentsComponent,AllStudentsComponent,HttpClientModule
   ]
   , host: {

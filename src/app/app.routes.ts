@@ -1,20 +1,20 @@
 import { Routes } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { StudentsComponent } from './components/students/students.component';
-import { ReportsComponent } from './components/reports/reports.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { HomeComponent } from './components/home/home.component';
-import { ContractComponent } from './components/contract/contract.component';
-import { UsersComponent } from './components/users/users.component';
-import { AllStudentsComponent } from './components/students/all-students/all-students.component';
-import { NewStudentsComponent } from './components/students/new-students/new-students.component';
-import { UpliftStudentsComponent } from './components/students/uplift-students/uplift-students.component';
-import { FormComponent } from './components/form/form.component';
-
+import { HeaderComponent } from './admin/components/header/header.component';
+import { StudentsComponent } from './admin/components/students/students.component';
+import { ReportsComponent } from './admin/components/reports/reports.component';
+import { PageNotFoundComponent } from './admin/components/page-not-found/page-not-found.component';
+import { HomeComponent } from './admin/components/home/home.component';
+import { UsersComponent } from './admin/components/users/users.component';
+import { AllStudentsComponent } from './admin/components/students/all-students/all-students.component';
+import { NewStudentsComponent } from './admin/components/students/new-students/new-students.component';
+import { UpliftStudentsComponent } from './admin/components/students/uplift-students/uplift-students.component';
+import { FormComponent } from './admin/components/form/form.component';
+import { guardGuard } from './shared/guard/guard.guard';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'reports', component: ReportsComponent },
+    { path: 'student',loadComponent:()=> import('./admin/components/students/new-students/new-students.component').then(c=>c.NewStudentsComponent) ,canActivate:[guardGuard] },
     {
         path: 'Students', component: StudentsComponent,
         children: [
@@ -28,7 +28,6 @@ export const routes: Routes = [
     { path: 'menu', component: HeaderComponent },
     { path: 'user', component: UsersComponent },
     { path: 'paying', component: FormComponent },
-    { path: 'contract', component: ContractComponent },
     { path: 'text/id', component: UpliftStudentsComponent },
     { path: '', pathMatch: 'full', redirectTo: '/**' },
     { path: '**', component: PageNotFoundComponent },

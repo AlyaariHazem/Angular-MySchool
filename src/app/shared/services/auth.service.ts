@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FirebaseService } from './firebase.service';
-import { signIn, signUp } from './firebase-url';
+import { signIn,signUp } from '../../../assets/firebase/firebase-url';
 import { Router } from '@angular/router';
 
 

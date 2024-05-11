@@ -7,7 +7,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AppTranslateModule } from './modules/app-translate.module';
 import {  HttpClientModule } from '@angular/common/http';
-import { IntercepterService } from './components/sharedComponents/intercepter.service';
+import { IntercepterService } from './shared/services/intercepter.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(), provideAnimationsAsync()
