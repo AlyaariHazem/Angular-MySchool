@@ -19,5 +19,5 @@ getRequest<T>(name:string):Observable<T>{
 postRequest(Url:string,body:any,options:any):Observable<ArrayBuffer>{
     return this.http.post(Url,body,options);
   }
-  
+
 }

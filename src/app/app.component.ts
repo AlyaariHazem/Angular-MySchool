@@ -30,53 +30,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.translationService.setDefaultLang('ar');
   }
-
-  
-  // allstudents: boolean = false;
-  // funShowStudents(show: boolean) {
-  //   this.allstudents = show;
-  // }
-
-
-
-  // StudentsInfo: Students[] = [
-  //   {
-  //     id: 1,
-  //     firstName: "حازم",
-  //     lastName: " عبدالله صلاح اليعري",
-  //     email: "Hazemalyaari@gmail.com",
-  //     age: 23,
-  //     phone: 7739840394,
-  //     grade: 100,
-  //     pay: 100,
-  //     allPay: 100,
-  //     still: 100
-  //   },
-  //   {
-  //     id: 2,
-  //     firstName: "فاهم",
-  //     lastName: " عبدالله صلاح اليعري",
-  //     email: "fahem@gmail.com",
-  //     age: 22,
-  //     phone: 23349837,
-  //     grade: 112,
-  //     pay: 100,
-  //     allPay: 100,
-  //     still: 100
-  //   },
-  //   {
-  //     id: 3,
-  //     firstName: "علي",
-  //     lastName: " عبدالله صلاح اليعري",
-  //     email: "ِali@gmail.com",
-  //     age: 6,
-  //     phone: 6349387492,
-  //     grade: 103,
-  //     pay: 100,
-  //     allPay: 100,
-  //     still: 100
-  //   }
-  // ];
  
 
 }

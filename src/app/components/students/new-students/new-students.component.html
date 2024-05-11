@@ -118,7 +118,7 @@
 
                 <div class="section6">
                     <label for="phone" class="lab6-1">رقم الجوال</label>
-                    <input type="text" minlength="9" maxlength="9" class="input6-1" formControlName="phone" style="width: 13.5%;">
+                    <input type="text" minlength="9"  maxlength="9" class="input6-1" formControlName="phone" style="width: 13.5%;">
                     @if (form.get('phone')?.invalid && (form.get('phone')?.dirty || form.get('phone')?.touched)) {
                         <div class="lab6-1" style="color: red; top: 2rem;">
                             @if (form.get('phone')?.errors?.['maxlength']) {

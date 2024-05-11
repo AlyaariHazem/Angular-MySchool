@@ -24,7 +24,7 @@
         <mat-form-field appearance="outline">
             <mat-label>كلمة السر</mat-label>
             <input matInput placeholder="كلمة السر" ngModel name="password" required
-                (ngModelChange)="onPasswordChanged($event)" minlength="6" maxlength="22" #pass="ngModel"
+                (ngModelChange)="onPasswordChanged($event)" minlength="2" maxlength="22" #pass="ngModel"
                 [ngModelOptions]="{updateOn:'blur'}">
 
 

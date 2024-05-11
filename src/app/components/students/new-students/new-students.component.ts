@@ -1,22 +1,19 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
+import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { SharedModule } from '../../sharedComponents/shared.module';
 import { AuthService } from '../../../services/auth.service';
+
 @Component({
   selector: 'app-new-students',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatIconModule, SharedModule],
+  imports: [SharedModule],
   templateUrl: './new-students.component.html',
   styleUrl: './new-students.component.scss'
 })
 export class NewStudentsComponent implements OnInit {
 
-  form:FormGroup;
+  form: FormGroup;
   name = "info";
-  
   sendNewStudent(): void {
     if (this.form.valid) {
       this.register();
@@ -24,7 +21,7 @@ export class NewStudentsComponent implements OnInit {
       console.log('Form is invalid:', this.form);
     }
   }
-  
+
   private authService=inject(AuthService);
   register():void{
     const formValue=this.form.value;
@@ -57,7 +54,7 @@ export class NewStudentsComponent implements OnInit {
       parantJob: "",
       parantType: "father",
       parantEmail: "",
-      parantPhone: ['', [Validators.required, Validators.minLength(9)]],
+      parantPhone: ['', [Validators.required, Validators.minLength(8)]],
       ParantName: '',
       ParnatContryNum: "",
     });

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, inject } from '@angular/core';
 import { SharedModule } from '../sharedComponents/shared.module';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-form',
@@ -10,23 +10,29 @@ import { SharedModule } from '../sharedComponents/shared.module';
   styleUrl: './form.component.scss'
 })
 export class FormComponent {
-[x: string]: any;
-  email:string='';
-  password:string='';
-  // private navigationService=inject(NavigationService);
-  // private authService=inject(Authser)
+  [x: string]: any;
+  email: string = '';
+  password: string = '';
+  private authService = inject(AuthService);
 
-  login(loginForm:NgForm): void{
-  
-    
+  login(loginform: any): void {
+    if (loginform.valid) {
+      const data = loginform.value;
+      this.authService.signIn(data.email, data.password).subscribe(res => {
+        console.log('res', res);
+      });
+    } else {
+      console.log('there is error ');
+    }
+
   }
 
-  onPasswordChanged(pass:string):void{
-    console.log('password',pass);
+  onPasswordChanged(pass: string): void {
+    console.log('password', pass);
   }
 
-  onEmailChanged(email:string):void{
-    console.log('password',email);
+  onEmailChanged(email: string): void {
+    console.log('password', email);
   }
 
 }
