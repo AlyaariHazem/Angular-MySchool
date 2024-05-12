@@ -34,6 +34,7 @@
     "jquery": "^3.7.1",
     "json-serve": "^0.1.0",
     "json-server": "^1.0.0-alpha.23",
+    "ngx-toastr": "^18.0.0",
     "ngx-translate-messageformat-compiler": "7.0.0",
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",

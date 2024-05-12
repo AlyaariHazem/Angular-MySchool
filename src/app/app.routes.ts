@@ -14,7 +14,9 @@ import { guardGuard } from './shared/guard/guard.guard';
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'reports', component: ReportsComponent },
-    { path: 'student',loadComponent:()=> import('./admin/components/students/new-students/new-students.component').then(c=>c.NewStudentsComponent) ,canActivate:[guardGuard] },
+    { path: 'student',
+    loadComponent:()=> import('./admin/components/students/all-students/all-students.component').then(c=>c.AllStudentsComponent) ,
+    canActivate:[guardGuard] }, 
     {
         path: 'Students', component: StudentsComponent,
         children: [

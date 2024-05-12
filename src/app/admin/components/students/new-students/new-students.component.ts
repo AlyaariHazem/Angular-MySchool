@@ -1,31 +1,35 @@
-import { Component, inject,OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../../../services/auth.service';
+import { AuthService } from '../../../../auth/auth.service';
 import { Shared } from '../../../../shared/shared.module';
+// import {  ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-new-students',
   standalone: true,
-  imports: [Shared,],
+  imports: [Shared],
   templateUrl: './new-students.component.html',
-  styleUrl: './new-students.component.scss'
+  styleUrl: './new-students.component.scss',
 })
 export class NewStudentsComponent implements OnInit {
   form: FormGroup;
   name = "info";
   sendNewStudent(): void {
     if (this.form.valid) {
-      this.register();
+      // this.register();
+      this.addStudent();
     } else {
       console.log('Form is invalid:', this.form);
     }
   }
 
-  private authService=inject(AuthService);
-  register():void{
-    const formValue=this.form.value;
-    this.authService.signUp(formValue.parantEmail,formValue.parantPhone).subscribe(res=>{
-      console.log('Hazem successful to register ',res);
+  private authService = inject(AuthService);
+  // private toastService = inject(ToastrService);
+
+  register(): void {
+    const formValue = this.form.value;
+    this.authService.signUp(formValue.parantEmail, formValue.parantPhone).subscribe(res => {
+      console.log('Hazem successful to register ', res);
     })
   }
   constructor(private formBuilder: FormBuilder) {
@@ -58,7 +62,14 @@ export class NewStudentsComponent implements OnInit {
       ParnatContryNum: "",
     });
   }
-  
+
+  private addStudent(): void {
+    this.authService.addStudent(this.form.value).subscribe(() => {
+      console.log('you add the student successfully');
+      // this.toastService.success('student added successfully');
+    })
+  }
+
   varaible: string = '';
   ngOnInit(): void {
 

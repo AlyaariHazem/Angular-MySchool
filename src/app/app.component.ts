@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './admin/components/header/header.component';
 import { StudentsComponent } from './admin/components/students/students.component';
 import { AllStudentsComponent } from './admin/components/students/all-students/all-students.component';
-import { TranslationService } from './services/translation.service';
+import { TranslationService } from './core/services/translation.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({

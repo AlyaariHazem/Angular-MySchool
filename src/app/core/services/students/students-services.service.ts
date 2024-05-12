@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 
 import { FirebaseService } from '../firebase.service';
-import { Students } from '../../students.modul';
+import { Students } from '../../../model/students';
 
 @Injectable({
   providedIn: 'root'

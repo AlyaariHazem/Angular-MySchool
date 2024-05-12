@@ -1,103 +1,101 @@
 <div class="iconSave">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy-fill" viewBox="0 0 16 16">
-      <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0H3v5.5A1.5 1.5 0 0 0 4.5 7h7A1.5 1.5 0 0 0 13 5.5V0h.086a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5H14v-5.5A1.5 1.5 0 0 0 12.5 9h-9A1.5 1.5 0 0 0 2 10.5V16h-.5A1.5 1.5 0 0 1 0 14.5z"/>
-      <path d="M3 16h10v-5.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5zm9-16H4v5.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5zM9 1h2v4H9z"/>
-    </svg>
-  </div>
-  <table class="table table-students table-bordered" dir="rtl">
-    
-      <tr>
-        <th>أكشن</th>
-        <th>رقم القيد</th>
-        <th>اسم الطالب</th>
-        <th>رقم الهاتف</th>
-        <th>العمر</th>
-        <th>الدرجات</th>
-        <th>الإيميل</th>
-        <th>إجمالي المدفوع</th>
-        <th>الباقي</th>
-      </tr>
-      @for (student of students; track  $index) {
-      <tr [ngClass]="{'bg-light': $index % 2 === 0}">
-        <td>
-          <span (click)="editStudent(student)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye"
-              viewBox="0 0 16 16">
-              <path
-                d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
-              <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-box-arrow-in-down-left" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M9.636 2.5a.5.5 0 0 0-.5-.5H2.5A1.5 1.5 0 0 0 1 3.5v10A1.5 1.5 0 0 0 2.5 15h10a1.5 1.5 0 0 0 1.5-1.5V6.864a.5.5 0 0 0-1 0V13.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
-              <path fill-rule="evenodd"
-                d="M5 10.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1H6.707l8.147-8.146a.5.5 0 0 0-.708-.708L6 9.293V5.5a.5.5 0 0 0-1 0z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3"
-              viewBox="0 0 16 16">
-              <path
-                d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
-            </svg>
-          </span>
-        </td>
-        @if (editingField === 'id_' + student.id) {
-        <td>
-          <input type="text" [(ngModel)]="student.id" name="id" class="form-control input-field" (blur)="onInputBlur('id_' + student.id)"/>
-        </td>
-        }@else {
-        <td (dblclick)="editStudent('id_' + student.id)" class="read-only-field">{{ ++$index }}</td>
-        }
-        @if (editingField === 'name_' + student.id) {
-        <td>
-          <input type="text" [(ngModel)]="student.name" name="name" class="form-control input-field" (blur)="onInputBlur('name_'+student.id)" />
-        </td>
-        }@else {
-        <td (dblclick)="editStudent('name_' + student.id)" class="read-only-field">{{ student.name}}</td>
-        }
-        @if (editingField === 'phone_' + student.id) {
-        <td>
-          <input type="text" [(ngModel)]="student.phone" name="phone" class="form-control input-field" (blur)="onInputBlur('phone_'+student.id)" />
-        </td>
-        }@else {
-        <td (dblclick)="editStudent('phone_' + student.id)" class="read-only-field">{{ student.phone }}</td>
-        }
-        @if (editingField === 'age_' + student.id) {
-        <td>
-          <input type="number" [(ngModel)]="student.age" name="age" class="form-control input-field" (blur)="onInputBlur('age_'+student.id)" />
-        </td>
-        }@else {
-        <td (dblclick)="editStudent('age_' + student.id)" class="read-only-field">{{ 22 }}</td>
-    
-        }
-        @if (editingField === 'grade_' + student.id) {
-        <td>
-          <input type="number" [(ngModel)]="student.grade" name="grade" class="form-control input-field" (blur)="onInputBlur('grade_'+student.id)" />
-        </td>
-        }@else {
-        <td (dblclick)="editStudent('grade_' + student.id)" class="read-only-field">{{ '100%' }}</td>
-        }
-        @if (editingField === 'email_' + student.id) {
-        <td>
-          <input type="email" [(ngModel)]="student.email" name="email" class="form-control input-field" (blur)="onInputBlur('email_'+student.id)"/>
-        </td>
-        }@else {
-        <td (dblclick)="editStudent('email_' + student.id)" class="read-only-field">{{ student.email }}</td>
-        }
-        @if (editingField === 'allPay_' + student.id) {
-        <td>
-          <input type="number" [(ngModel)]="student.allPay" name="allPay" class="form-control input-field" (blur)="onInputBlur('allPay_'+student.id)" />
-        </td>
-        }@else {
-        <td (dblclick)="editStudent('allPay_' + student.id)" class="read-only-field">{{ student.allPay }}</td>
-        }
-        @if (editingField === 'still_' + student.id) {
-        <td>
-          <input type="number" [(ngModel)]="student.still" name="still" class="form-control input-field" (blur)="onInputBlur('still_'+student.id)"/>
-        </td>
-        }@else {
-        <td (dblclick)="editStudent('still_' + student.id)" class="read-only-field">{{ student.still }}</td>
-        }
-      </tr>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy-fill" viewBox="0 0 16 16">
+    <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0H3v5.5A1.5 1.5 0 0 0 4.5 7h7A1.5 1.5 0 0 0 13 5.5V0h.086a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5H14v-5.5A1.5 1.5 0 0 0 12.5 9h-9A1.5 1.5 0 0 0 2 10.5V16h-.5A1.5 1.5 0 0 1 0 14.5z"/>
+    <path d="M3 16h10v-5.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5zm9-16H4v5.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5zM9 1h2v4H9z"/>
+  </svg>
+</div>
+<table class="table table-students table-bordered" dir="rtl">
+  <tr>
+    <th>أكشن</th>
+    <th>الرقم الشخصي</th>
+    <th>الاسم الأول</th>
+    <th>الاسم الثاني</th>
+    <th>الاسم الثالث</th>
+    <th>الاسم الأخير</th>
+    <th>البريد الإلكتروني</th>   
+    <th>الصف</th>
+    <th>الدرجة</th>
+    <th>رقم الهاتف</th>
+    <th>المدينة</th>
+    <th>رقم الهاتف</th>
+  </tr>
+  @for (student of students; track $index) {
+    <tr [ngClass]="{'bg-light': $index % 2 === 0}">
+      <td>
+        <span (click)="editStudent(student)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-box-arrow-in-down-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M9.636 2.5a.5.5 0 0 0-.5-.5H2.5A1.5 1.5 0 0 0 1 3.5v10A1.5 1.5 0 0 0 2.5 15h10a1.5 1.5 0 0 0 1.5-1.5V6.864a.5.5 0 0 0-1 0V13.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+            <path fill-rule="evenodd"
+              d="M5 10.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1H6.707l8.147-8.146a.5.5 0 0 0-.708-.708L6 9.293V5.5a.5.5 0 0 0-1 0z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3"
+            viewBox="0 0 16 16">
+            <path
+              d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+          </svg>
+        </span>
+      </td>
+      @if (editingField === 'id_' + student.id) {
+      <td>
+        <input type="text" [(ngModel)]="student.id" name="id" class="form-control input-field" (blur)="onInputBlur('id_' + student.id)"/>
+      </td>
+      }@else {
+      <td (dblclick)="editStudent('id_' + student.id)" class="read-only-field">{{ student.id }}</td>
       }
-    </table>
+      @if (editingField === 'fname_' + student.id) {
+      <td>
+        <input type="text" [(ngModel)]="student.fname" name="fname" class="form-control input-field" (blur)="onInputBlur('fname_'+student.id)" />
+      </td>
+      }@else {
+      <td (dblclick)="editStudent('fname_' + student.id)" class="read-only-field">{{ student.fname }}</td>
+      }
+      @if (editingField === 'Sname_' + student.id) {
+      <td>
+        <input type="text" [(ngModel)]="student.Sname" name="Sname" class="form-control input-field" (blur)="onInputBlur('Sname_'+student.id)" />
+      </td>
+      }@else {
+      <td (dblclick)="editStudent('Sname_' + student.id)" class="read-only-field">{{ student.Sname }}</td>
+      }
+      @if (editingField === 'Tname_' + student.id) {
+      <td>
+        <input type="text" [(ngModel)]="student.Tname" name="Tname" class="form-control input-field" (blur)="onInputBlur('Tname_'+student.id)" />
+      </td>
+      }@else {
+      <td (dblclick)="editStudent('Tname_' + student.id)" class="read-only-field">{{ student.Tname }}</td>
+      }
+      @if (editingField === 'Lname_' + student.id) {
+      <td>
+        <input type="text" [(ngModel)]="student.Lname" name="Lname" class="form-control input-field" (blur)="onInputBlur('Lname_'+student.id)" />
+      </td>
+      }@else {
+      <td (dblclick)="editStudent('Lname_' + student.id)" class="read-only-field">{{ student.Lname }}</td>
+      }
+      @if (editingField === 'email_' + student.id) {
+      <td>
+        <input type="email" [(ngModel)]="student.email" name="email" class="form-control input-field" (blur)="onInputBlur('email_'+student.id)"/>
+      </td>
+      }@else {
+      <td (dblclick)="editStudent('email_' + student.id)" class="read-only-field">{{ student.email }}</td>
+      }
+      @if (editingField === 'class_' + student.id) {
+      <td>
+        <input type="text" [(ngModel)]="student.class" name="class" class="form-control input-field" (blur)="onInputBlur('class_'+student.id)"/>
+      </td>
+      }@else {
+      <td (dblclick)="editStudent('class_' + student.id)" class="read-only-field">{{ student.class }}</td>
+      }
+      @if (editingField === 'grade_' + student.id) {
+      <td>
+        <input type="number" [(ngModel)]="student.grade" name="grade" class="form-control input-field" (blur)="onInputBlur('grade_'+student.id)" />
+      </td>
+      }@else {
+      <td (dblclick)="editStudent('grade_' + student.id)" class="read-only-field">{{ student.grade }}</td>
+      }
+      @if (editingField === 'phone_' + student.id) {
+      <td>
+        <input type="number" [(ngModel)]="student.phone" name="phone" class="form-control input-field" (blur)="onInputBlur('phone_'+student.id)"/>
+            }
+          }
+            </table>

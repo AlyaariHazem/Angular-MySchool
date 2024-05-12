@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Shared } from '../../../../shared/shared.module';
-import { Students } from '../../../../students.modul';
-import { StudentsServicesService } from '../../../../services/students/students-services.service';
+import { Students } from '../../../../model/students';
+import { StudentsServicesService } from '../../../../core/services/students/students-services.service';
 
 @Component({
   selector: 'app-all-students',
