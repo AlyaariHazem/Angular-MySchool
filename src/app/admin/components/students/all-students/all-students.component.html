@@ -74,10 +74,10 @@
       }
       @if (editingField === 'email_' + student.id) {
       <td>
-        <input type="email" [(ngModel)]="student.email" name="email" class="form-control input-field" (blur)="onInputBlur('email_'+student.id)"/>
+        <input type="email" [(ngModel)]="student.parantEmail" name="email" class="form-control input-field" (blur)="onInputBlur('email_'+student.id)"/>
       </td>
       }@else {
-      <td (dblclick)="editStudent('email_' + student.id)" class="read-only-field">{{ student.email }}</td>
+      <td (dblclick)="editStudent('email_' + student.id)" class="read-only-field">{{ student.parantEmail }}</td>
       }
       @if (editingField === 'class_' + student.id) {
       <td>

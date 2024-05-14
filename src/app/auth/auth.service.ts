@@ -11,16 +11,17 @@ import { Students } from '../model/students';
     providedIn: 'root'
 })
 export class AuthService {
-    
-    constructor(public router:Router){}
+
+    constructor(public router: Router) { }
     firebaseService = inject(FirebaseService);
     signUp(email: string, password: string): Observable<any> {
         return this.firebaseService.postRequest(signUp, { email, password, 'returnSecureToken': true }, { 'content-type': 'application/json' });
     }
-    signIn(email:string,password:string):Observable<any>{
-    return this.firebaseService.postRequest(signIn,{email, password, 'returnSecureToken': true}, { 'content-type': 'application/json' });
+    signIn(email: string, password: string): Observable<any> {
+        return this.firebaseService.postRequest(signIn, { email, password, 'returnSecureToken': true }, { 'content-type': 'application/json' });
     }
     addStudent(student: Students): Observable<any> {
-        return this.firebaseService.postRequest(`${firebaseUrl}stuents.json`, student, { 'content-type': 'application/json' });
-}
+        return this.firebaseService.postRequest(`${firebaseUrl}students.json`, student, { 'content-type': 'application/json' });
+    }
+   
 }

@@ -11,7 +11,7 @@ body {
   position: fixed;
   top: 0;
   background-color: #f0f4f7;
-  z-index: 1;
+  z-index: 11;
 }
 .header{
  margin-top: 3rem;
@@ -61,7 +61,7 @@ body {
 }
 
 .nav-scroller .nav-link:hover {
-  color: #007bff;
+  color: rgb(30 136 229);
 }
 
 .nav-scroller .active {
@@ -95,7 +95,8 @@ body {
 
 
 p.schoolName{
-  // font-size: 2rem;
+  font-size: 2rem;
+  z-index: 2222222;
   font-weight: bold;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: fixed;
@@ -107,39 +108,26 @@ p.schoolName{
   position: fixed;
   top:2px;
   right:2px;
+  border-radius: 21%;
   width: 77px;
   height: auto;
-  z-index: 2;
+  z-index: 2222222;
 }
 //when you vist the link it make it white
 .white{
   color:white;
 }
-.photo1{
+.photo1 {
   color:rgb(22, 212, 255);
   position: fixed;
   top: -2px;
-  left: 16%;
+  left: 7%;
   z-index: 11;
+  cursor: pointer;
 }
 .photo1 img{
+  border-radius: 20px;
   width:50px ;
   border: 1px solid rgb(247, 195, 247);
-  border-radius: 20px;
 }
-.photo1 p{
-  top: 33px;
-  left: 12%;
-  position: fixed;
-  z-index: 1111;
-  color: black;
-}
-.exit{
-  position: fixed;
-  top: 16px;
-  font-weight: bold;
-  color:red;
-  cursor: pointer;
-  left: 1%;
-  z-index: 11;
-}
+

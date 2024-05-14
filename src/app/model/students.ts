@@ -8,7 +8,7 @@ export interface Students {
     Tname: string,
     Lname: string,
     LnameE: string,
-    email: string,
+    parantEmail: string,
     class:string,
     depart:string,
     PlacePD: number,

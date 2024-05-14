@@ -1,0 +1,167 @@
+.info{
+    margin-top: 8rem;
+    width: 100%;
+    z-index:-3;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+}
+.title{
+  font-size: 25px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.addNewUser{
+    position: relative;
+    margin-bottom: 1rem;
+    top: 1rem;
+    right:5rem;
+}
+.row1{
+    position: relative;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 8rem;
+    border-width: 0 0 1px 0;
+    border-bottom: 1px solid rgb(152, 152, 152);
+    border-right: 2px solid rgb(31, 26, 26);
+    border-left: 2px solid rgb(40, 35, 35);
+}
+
+.row1-1{
+    width: 2%;
+    border-top: 2px solid rgb(31, 26, 26);
+    position: absolute;
+    top: 0;
+    right:0;
+}
+.row1-2{
+    width: 2%;
+    border-top: 2px solid rgb(31, 26, 26);
+    position: absolute;
+    top: 0;
+    left:0;
+}
+//this for edit and add User **************************************************====>>
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  .container button{
+    width: 33%;
+  }
+  .cansel{
+    margin-right: 22%;
+  }
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 22%;
+    border-radius: 50%;
+  }
+  svg{
+    cursor: pointer;
+    margin-right: 11px;
+  }
+  svg:hover{
+    color:red;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  .section1{
+    position: relative;
+    width:50%;
+  }
+  .section2{
+    position: relative;
+    width: 50%;
+    right: 50%;
+    top: -9.7rem;
+  }  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }

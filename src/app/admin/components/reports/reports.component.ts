@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { payment } from '../../../students.modul';
+import { payment } from '../../../paying.modul';
 
 @Component({
   selector: 'app-reports',

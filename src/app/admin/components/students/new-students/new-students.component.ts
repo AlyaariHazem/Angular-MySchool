@@ -14,9 +14,9 @@ import { Shared } from '../../../../shared/shared.module';
 export class NewStudentsComponent implements OnInit {
   form: FormGroup;
   name = "info";
+
   sendNewStudent(): void {
     if (this.form.valid) {
-      // this.register();
       this.addStudent();
     } else {
       console.log('Form is invalid:', this.form);
@@ -26,12 +26,6 @@ export class NewStudentsComponent implements OnInit {
   private authService = inject(AuthService);
   // private toastService = inject(ToastrService);
 
-  register(): void {
-    const formValue = this.form.value;
-    this.authService.signUp(formValue.parantEmail, formValue.parantPhone).subscribe(res => {
-      console.log('Hazem successful to register ', res);
-    })
-  }
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       PlacePD: ['', Validators.required],

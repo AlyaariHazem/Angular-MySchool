@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+
 import { Shared } from '../../../../shared/shared.module';
 import { Students } from '../../../../model/students';
 import { StudentsServicesService } from '../../../../core/services/students/students-services.service';
@@ -36,7 +37,7 @@ export class AllStudentsComponent {
 
     this.getStudentsData.getStudents().subscribe(res=>{
       this.students=res;
-      console.log('these are stuents ',this.students);  
+      console.log('these are students ',this.students);  
     })
   }
 

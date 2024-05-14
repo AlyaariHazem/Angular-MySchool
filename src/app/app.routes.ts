@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { HeaderComponent } from './admin/components/header/header.component';
 import { StudentsComponent } from './admin/components/students/students.component';
 import { ReportsComponent } from './admin/components/reports/reports.component';
@@ -31,7 +32,7 @@ export const routes: Routes = [
     { path: 'user', component: UsersComponent },
     { path: 'paying', component: FormComponent },
     { path: 'text/id', component: UpliftStudentsComponent },
-    { path: '', pathMatch: 'full', redirectTo: '/**' },
+    { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', component: PageNotFoundComponent },
 
 ];
