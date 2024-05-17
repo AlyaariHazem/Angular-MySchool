@@ -1,6 +1,7 @@
 export interface Users{
-    id:number,
+    id:string,
     Uname:string,
+    psw:string,
     email:string,
     type:string,
     date:Date   

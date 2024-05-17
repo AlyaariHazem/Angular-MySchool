@@ -8,13 +8,25 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { AppTranslateModule } from './modules/app-translate.module';
 import {  HttpClientModule } from '@angular/common/http';
 import { IntercepterService } from './core/services/intercepter.service';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(), provideAnimationsAsync()
     ,provideRouter(routes,withComponentInputBinding()), provideAnimationsAsync(),
-    importProvidersFrom(HttpClientModule),
+    importProvidersFrom((HttpClientModule)),
     importProvidersFrom(AppTranslateModule.forRoot()),   
     provideHttpClient(withFetch()),
+    provideAnimations(), // required animations providers
+   // Toastr providers
+    provideToastr(
+      {
+        timeOut: 10000,
+        positionClass: 'toast-bottom-left',
+      }
+    ), 
+    
+    
     {provide:HTTP_INTERCEPTORS,useClass:IntercepterService,multi:true}
   ]
 };

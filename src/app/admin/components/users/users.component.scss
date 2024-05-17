@@ -11,7 +11,7 @@
 }
 .addNewUser{
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
     top: 1rem;
     right:5rem;
 }
@@ -21,7 +21,7 @@
     border-right: 2px solid black;
     margin-left: 1rem;
     margin-right: 1rem;
-    padding-bottom: 8rem;
+    padding-bottom: 2rem;
     border-width: 0 0 1px 0;
     border-bottom: 1px solid rgb(152, 152, 152);
     border-right: 2px solid rgb(31, 26, 26);
@@ -41,6 +41,11 @@
     position: absolute;
     top: 0;
     left:0;
+}
+input:focus,select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 //this for edit and add User **************************************************====>>
 /* Full-width input fields */

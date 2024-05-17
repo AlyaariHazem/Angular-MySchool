@@ -8,6 +8,8 @@ import { StudentsComponent } from './admin/components/students/students.componen
 import { AllStudentsComponent } from './admin/components/students/all-students/all-students.component';
 import { TranslationService } from './core/services/translation.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [RouterOutlet, HeaderComponent, 
-    StudentsComponent,AllStudentsComponent,HttpClientModule
+    StudentsComponent,AllStudentsComponent,HttpClientModule,ToastrModule
+    
   ]
   , host: {
     '[attr.ngSkipHydration]': 'true'

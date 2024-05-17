@@ -1,8 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../../../auth/auth.service';
+
 import { Shared } from '../../../../shared/shared.module';
-// import {  ToastrService } from 'ngx-toastr';
+import { StudentsServicesService } from '../../../../core/services/students/students-services.service';
+import {  ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-new-students',
@@ -11,7 +12,7 @@ import { Shared } from '../../../../shared/shared.module';
   templateUrl: './new-students.component.html',
   styleUrl: './new-students.component.scss',
 })
-export class NewStudentsComponent implements OnInit {
+export class NewStudentsComponent{
   form: FormGroup;
   name = "info";
 
@@ -20,11 +21,12 @@ export class NewStudentsComponent implements OnInit {
       this.addStudent();
     } else {
       console.log('Form is invalid:', this.form);
+      this.toastService.error('ادخل بيانات الطالب بالكامل');
     }
   }
 
-  private authService = inject(AuthService);
-  // private toastService = inject(ToastrService);
+  private studentService=inject(StudentsServicesService);
+  private toastService = inject(ToastrService);
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
@@ -58,18 +60,10 @@ export class NewStudentsComponent implements OnInit {
   }
 
   private addStudent(): void {
-    this.authService.addStudent(this.form.value).subscribe(() => {
+    this.studentService.addStudent(this.form.value).subscribe(() => {
       console.log('you add the student successfully');
-      // this.toastService.success('student added successfully');
+      this.toastService.success('تم إضافة الطالب بنجاح');
     })
-  }
-
-  varaible: string = '';
-  ngOnInit(): void {
-
-    this.form.get('class')?.valueChanges.subscribe(value => {
-      this.varaible = value;
-    });
   }
 
 }

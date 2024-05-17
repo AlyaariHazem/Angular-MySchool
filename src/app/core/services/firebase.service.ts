@@ -19,5 +19,10 @@ getRequest<T>(name:any): Observable<T>{
 postRequest(Url:string,body:any,options:any):Observable<ArrayBuffer>{
     return this.http.post(Url,body,options);
   }
-  
+  patchRequest(Url:string,body:any,options:any):Observable<ArrayBuffer>{
+    return this.http.patch(Url,body,options);
+  }
+  deleteRequest(Url:string,options:any): Observable<ArrayBuffer>{
+    return this.http.delete(Url,options);
+  }
 }
